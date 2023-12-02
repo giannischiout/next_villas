@@ -10,8 +10,11 @@ const IntroScroll2 = () => {
 
     const [scope, animate] = useAnimate();
     const [fireAnimation, setFireAnimation] = useState(false);
+    const [fired, setFired] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [position, setPosition] = useState('fixed');
+
+
 
     
     useEffect(() => {
@@ -19,12 +22,14 @@ const IntroScroll2 = () => {
             setScrollY(window.scrollY);
         };
         window.addEventListener('scroll', handleScroll);
+    
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
     const handleAnimate = async () => {
+        setFired(true)
         console.log('start')
         await animate('#image', {
             width: 700,
@@ -37,6 +42,7 @@ const IntroScroll2 = () => {
         setFireAnimation(false);
         console.log('end')
         setPosition('static')
+        window.scrollTo(0, 0)
       
         
     }
@@ -49,7 +55,7 @@ const IntroScroll2 = () => {
 
     useEffect(() => {
        
-        if (scrollY > 0.56) {
+        if (scrollY > 0.56 && scrollY < 100) {
             setFireAnimation(true)
             
         } else {
@@ -58,7 +64,7 @@ const IntroScroll2 = () => {
     }, [scrollY])
 
     useEffect(() => {
-        if(fireAnimation) {
+        if(!fired && scrollY > 0.56 && scrollY < 100) {
             handleAnimate()
         }   
     }, [fireAnimation])
