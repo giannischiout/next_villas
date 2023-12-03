@@ -30,19 +30,31 @@ const IntroScroll4 = () => {
 
   const handleAnimate = async () => {
     setFired(true)
-    console.log('start')
       await animate('#intro_image_wrapper_2', {
-      width: 700,
-      height: 200,
+      width: 1300,
+      height: 250,
       top: '50%',
       transform: 'translateY(-50%)',
-
     },
     {
       ease: 'easeInOut',
-      duration: 2,
+      duration: 1,
+    })
+    await animate('#intro_image_wrapper_2', {
+      width: 900,
+      right: 300,
+    },
+    {
+      ease: 'easeInOut',
+      duration: 1,
     })
     
+    await animate('#intro_content', {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end',
+    })
     await animate(scope.current, { 
       position: 'static',
      })
@@ -79,6 +91,22 @@ const IntroScroll4 = () => {
     <div  className="container_2">
        <div ref={scope} id="intro_wrapper_2">
             <div id="intro_image_wrapper_2">
+            </div>
+            <div id="intro_content">
+              <div id="intro_content_top">
+                  <div className="intro_content_top_inner"> 
+                    <span>L</span>
+                    <span>O</span>
+                    <span>O</span>
+                    <span>K</span>
+                    <p>BEYOND LIMITS.</p>
+                  </div>
+                  <div></div>
+              </div>
+              <div id="intro_content_bottom">
+                  <div></div>
+                  <div></div>
+              </div>
             </div>
        </div>
 
