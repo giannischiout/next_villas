@@ -6,7 +6,7 @@ import { motion, useScroll, useAnimation, useAnimate, useTransform } from "frame
 import { scroll } from "framer-motion"
 
 import Image from "next/image";
-const IntroScroll3 = () => {
+const IntroScroll4 = () => {
 
   const [scope, animate] = useAnimate();
   const [fireAnimation, setFireAnimation] = useState(false);
@@ -31,7 +31,7 @@ const IntroScroll3 = () => {
   const handleAnimate = async () => {
     setFired(true)
     console.log('start')
-      await animate('#intro_image_wrapper', {
+      await animate('#intro_image_wrapper_2', {
       width: 700,
       height: 200,
       top: '50%',
@@ -76,16 +76,14 @@ const IntroScroll3 = () => {
 
 
   return (
-    <div  className="container">
-    <div ref={scope} id="intro_wrapper">
-      <div id="intro_image_wrapper">
-      </div>
-      {/* <div className="intro_content">
-  
-      </div> */}
-    </div>
+    <div  className="container_2">
+       <div ref={scope} id="intro_wrapper_2">
+            <div id="intro_image_wrapper_2">
+            </div>
+       </div>
+
     </div>
   );
 };
 
-export default IntroScroll3;
+export default IntroScroll4;
