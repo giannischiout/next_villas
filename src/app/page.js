@@ -7,15 +7,13 @@ import FullPageDiv from "./_components/Example";
 const Home =  () => {
   return (
     <div>
-      <IntroScroll2 />
+      <IntroScroll3 />
       <section className="section-1">
           <p>part 2</p>
       </section>
       <section className="section-2">
           <p>part 2</p>
       </section>
-            
-
     </div>
   )
 }

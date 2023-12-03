@@ -12,14 +12,23 @@
 
 
 
-.intro {
-  overflow: hidden;
-  height: 100vh;
+#intro_wrapper {
+  background-color: aquamarine;
   width: 100vw;
-  background-color: rgba(255, 192, 203, 0.438);
+  height: 100vh;
+  overflow-y: scroll;
   display: flex;
+  position: fixed;
   align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0;
 }
+
+
+#intro_image_wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url('../../public/villa.jpg');
+  background-size: cover;
+  right: 0;
+}
+
