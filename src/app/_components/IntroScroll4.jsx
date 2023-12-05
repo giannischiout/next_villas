@@ -31,9 +31,10 @@ const IntroScroll4 = () => {
   const handleAnimate = async () => {
     setFired(true)
       await animate('#intro_image_wrapper_2', {
-      width: 1300,
+      width: '40%',
       height: 250,
-      top: '50%',
+      top: '40%',
+      left: '55%',
       transform: 'translateY(-50%)',
     },
     {
@@ -41,7 +42,7 @@ const IntroScroll4 = () => {
       duration: 1,
     })
     await animate('#intro_image_wrapper_2', {
-      width: 900,
+      width: '35%',
       right: 300,
     },
     {
@@ -54,6 +55,9 @@ const IntroScroll4 = () => {
       flexDirection: 'column',
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
+    })
+    await animate('#image_bottom', {
+      display: 'block'
     })
     await animate(scope.current, { 
       position: 'static',
@@ -104,8 +108,9 @@ const IntroScroll4 = () => {
                   <div></div>
               </div>
               <div id="intro_content_bottom">
-                  <div></div>
-                  <div></div>
+                  <div id="image_bottom">
+                  </div>
+                  <div id="intro_text_2">FIND</div>
               </div>
             </div>
        </div>

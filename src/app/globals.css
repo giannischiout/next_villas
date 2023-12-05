@@ -71,11 +71,13 @@
 }
 
 #intro_content_top {
-  height: 40%;
+  height: 35%;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
   padding-left: 200px;
+  /* background-color: antiquewhite; */
 }
 
 .intro_content_top_inner {
@@ -84,7 +86,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: pink;
 
 }
 
@@ -92,7 +93,7 @@
   display: block;
   letter-spacing: 1rem;
   color: #d9E3da;
-  font-size: calc(6rem + 9vw);
+  font-size: calc(4rem + 9vw);
   font-weight: 300;
 }
 
@@ -104,10 +105,30 @@
 }
 #intro_content_bottom {
   width: 100%;
-  height: 30%;
-  /* background-color: rgb(132, 85, 27); */
+  height: 45%;
+  display: grid;
+  grid-template-columns: 90% 1fr;
+  /* align-items: flex-start; */
+  background-color: rgb(132, 85, 27);
 }
 
+#image_bottom {
+  background-image: url('../../public/villa.jpg');
+  display: none;
+  width: 80%;
+  height: 250px;
+  background-size: cover;
+}
+
+#intro_text_2 {
+  font-size: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: red;
+  height: 250px;
+
+}
 @media (max-width: 768px) {
   
 }
