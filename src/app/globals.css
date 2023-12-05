@@ -47,7 +47,7 @@
   position: absolute;
   background-image: url('../../public/villa.jpg');
   background-size: cover;
-  right: 0;
+  top:0;
   background-color: beige;
 
 }
