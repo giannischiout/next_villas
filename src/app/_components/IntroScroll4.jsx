@@ -22,7 +22,10 @@ const IntroScroll4 = () => {
       setScrollY(window.scrollY);
     };
     window.addEventListener('scroll', handleScroll);
-    window.scrollTo(0, 0)
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+    });
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -31,11 +34,10 @@ const IntroScroll4 = () => {
   const handleAnimate = async () => {
     setFired(true)
       await animate('#intro_image_wrapper_2', {
-      width: '40%',
-      height: 250,
-      top: '40%',
-      left: '55%',
-      transform: 'translateY(-50%)',
+        width: 1300,
+        height: 250,
+        top: '50%',
+        transform: 'translateY(-50%)',
     },
     {
       ease: 'easeInOut',
@@ -49,22 +51,49 @@ const IntroScroll4 = () => {
       ease: 'easeInOut',
       duration: 1,
     })
+
     
+   
     await animate('#intro_content', {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
     })
-    await animate('#image_bottom', {
-      display: 'block'
+    // await animate('#intro_content', {
+    //   bottom: 0,
+    //   opacity: 1
+    // }, {ease: 'easeInOut', duration: 1})
+
+    await animate('#intro_image_wrapper_2', {
+      top: '40%'
+    },
+    {
+      ease: 'easeInOut',
+      duration: 2,
     })
+    window.scrollTo(0, 0)
+    //Reveal the bottom image:
+    // await animate('#image_bottom', {
+    //   display: 'block'
+    // })
+
+    //Change position to static so we can scroll again:
     await animate(scope.current, { 
       position: 'static',
      })
-    window.scrollTo(0, 0)
+
+
+    
     setFireAnimation(false);
   }
+
+
+  const handleGroupedItemsAnimation = async () => {
+
+  }
+
+  
 
 
   useEffect(() => {
