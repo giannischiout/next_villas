@@ -22,9 +22,10 @@ const IntroScroll4 = () => {
       setScrollY(window.scrollY);
     };
     window.addEventListener('scroll', handleScroll);
-    document.addEventListener('DOMContentLoaded', () => {
-      window.scrollTo(0, 0);
-    });
+    document.documentElement.scrollTop = 0;
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   window.scrollTo(0, 0);
+    // });
   
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -32,8 +33,9 @@ const IntroScroll4 = () => {
   }, []);
 
   const handleAnimate = async () => {
+    console.log('handleAnimate ')
     setFired(true)
-      await animate('#intro_image_wrapper_2', {
+    await animate('#intro_image_wrapper_2', {
         width: 1300,
         height: 250,
         top: '50%',
@@ -43,14 +45,14 @@ const IntroScroll4 = () => {
       ease: 'easeInOut',
       duration: 1,
     })
-    await animate('#intro_image_wrapper_2', {
-      width: '35%',
-      right: 300,
-    },
-    {
-      ease: 'easeInOut',
-      duration: 1,
-    })
+    // await animate('#intro_image_wrapper_2', {
+    //   width: '35%',
+    //   right: 300,
+    // },
+    // {
+    //   ease: 'easeInOut',
+    //   duration: 1,
+    // })
 
     
    
@@ -59,20 +61,22 @@ const IntroScroll4 = () => {
       flexDirection: 'column',
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
+      position: 'relative',
+      bottom: 0,
     })
     // await animate('#intro_content', {
     //   bottom: 0,
     //   opacity: 1
     // }, {ease: 'easeInOut', duration: 1})
 
-    await animate('#intro_image_wrapper_2', {
-      top: '40%'
-    },
-    {
-      ease: 'easeInOut',
-      duration: 2,
-    })
-    window.scrollTo(0, 0)
+    // await animate('#intro_image_wrapper_2', {
+    //   top: '40%'
+    // },
+    // {
+    //   ease: 'easeInOut',
+    //   duration: 2,
+    // })
+  
     //Reveal the bottom image:
     // await animate('#image_bottom', {
     //   display: 'block'
@@ -82,27 +86,22 @@ const IntroScroll4 = () => {
     await animate(scope.current, { 
       position: 'static',
      })
-
+     window.scrollTo(0, 0)
+    
 
     
     setFireAnimation(false);
   }
 
 
-  const handleGroupedItemsAnimation = async () => {
-
-  }
 
   
 
 
   useEffect(() => {
-      
-  }, [scrollY])
-
-  useEffect(() => {
-
-    if (scrollY > 0.56 && scrollY < 100) {
+    console.log('useEffect')
+    if (scrollY > 0.34) {
+      console.log('fire animation')
       setFireAnimation(true)
 
     } else {
