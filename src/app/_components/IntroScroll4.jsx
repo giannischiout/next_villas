@@ -36,38 +36,91 @@ const IntroScroll4 = () => {
   const handleAnimate = async () => {
     console.log('handleAnimate ')
     setFired(true)
+    // await animate('#intro_image_wrapper_2', {
+    //     // width: 1300,
+    //     // height: 250,
+    //     // left: '50%',
+    //     // top: '50%',
+    //     // transform: 'translateY(-50%)',
+    //     // overflow: 'hidden',
+    //     clipPath: "inset(39% 0 32% 44%)"
+    // },
+    // {
+    //   ease: 'easeInOut',
+    //   duration: 0.5,
+    // })
+    // await animate('#intro_image_wrapper_2', {
+    //     clipPath: "inset(39% 0 32% 44%)",
+     
+    // },
+    // {
+    //   ease: 'easeInOut',
+    //   duration: 1,
+    // })
     await animate('#intro_image_wrapper_2', {
-        width: 1300,
-        height: 250,
-        left: '50%',
-        top: '50%',
-        transform: 'translateY(-50%)',
+        clipPath: "inset(40% 0 40% 44%)",
+        transform: 'scale(0.8)',
+        
     },
     {
       ease: 'easeInOut',
       duration: 1,
     })
     await animate('#intro_image_wrapper_2', {
-      width: '35%',
-    },
-    {
-      ease: 'easeInOut',
-      duration: 1,
-    })
+      // clipPath: "inset(40% 10% 40% 44%)",
+      
+  },
+  {
+    ease: 'easeOut',
+    duration: 0.5,
+  })
+    await animate('#intro_image_wrapper_2', {
+        y: -400,
+        clipPath: "inset(40% 10% 40% 44%)",
+        transform: "translateY(-10%)  scale(0.8)" 
 
-    
-   
-    await animate('#intro_content', {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-end',
-      justifyContent: 'flex-end',
-      position: 'relative',
-      bottom: 0,
+    },
+    {
+      ease: 'easeOut',
+      duration: 1,
     })
+    // await animate('#image_wrapper', {
+    //     y: -200,
+    // },
+    // {
+    //   ease: 'easeOut',
+    //   duration: 1,
+    // })
+    // await animate('#intro_image_wrapper_2', {
+    //     transform: 'translateY(5%) ',
+    //     clipPath: "inset(40% 400 40% 44%)",
+    // },
+    // {
+    //   ease: 'easeOut',
+    //   duration: 1,
+    // })
+   
+    // await animate('#intro_image_wrapper_2', {
+    //   width: '35%',
+    // },
+    // {
+    //   ease: 'easeInOut',
+    //   duration: 1,
+    // })
+   
+   
+    // await animate('#intro_content', {
+    //   display: 'flex',
+    //   flexDirection: 'column',
+    //   alignItems: 'flex-end',
+    //   justifyContent: 'flex-end',
+    //   position: 'relative',
+    //   bottom: 0,
+    // })
     // await animate('#intro_content', {
     //   bottom: 0,
     //   opacity: 1
+
     // }, {ease: 'easeInOut', duration: 1})
 
     // await animate('#intro_image_wrapper_2', {
@@ -117,25 +170,16 @@ const IntroScroll4 = () => {
   }, [fireAnimation])
 
 
-  const visible = {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-end',
-      justifyContent: 'flex-end',
-      position: 'relative',
-      bottom: 0,
-
-  }
 
 
   return (
     <div  className="container_2">
        <div ref={scope} id="intro_wrapper_2">
             <div id="intro_image_wrapper_2">
+              <div id="image_wrapper">
+              </div>
             </div>
-           
-            <div 
-            id="intro_content"
+            <div id="intro_content"
             >
               <div id="intro_content_top">
                   <div className="intro_content_top_inner"> 
