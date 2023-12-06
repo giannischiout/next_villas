@@ -7,13 +7,13 @@ import HorizontalScroll from "./_components/HorizontalScroll";
 import FullPageDiv from "./_components/Example";
 const Home =  () => {
   return (
-    <>
+    <div>
       <IntroScroll4 />
       <div className="section-1">
           <p>part 2</p>
       </div>
      
-    </>
+    </div>
   )
 }
 
