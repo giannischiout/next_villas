@@ -46,7 +46,6 @@
       height: 100vh;
       transform: scale(1.1);
       transform-origin: right;
-      overflow: hidden;
 }
 
 
@@ -56,6 +55,7 @@
   background-image: url('../../public/villa.jpg');
   background-size: cover;
   background-position: 25% 50%; 
+  background-color: red;
 }
 
 #intro_image_wrapper_2::-webkit-scrollbar {

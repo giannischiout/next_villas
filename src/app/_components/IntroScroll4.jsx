@@ -6,6 +6,8 @@ import { motion, useScroll, useAnimation, useAnimate, useTransform } from "frame
 import { scroll } from "framer-motion"
 import Image from "next/image";
 import { LayoutGroup } from "framer-motion"
+import { easeIn } from "framer-motion"
+import { cubicBezier } from "framer-motion"
 
 const IntroScroll4 = () => {
 
@@ -32,58 +34,35 @@ const IntroScroll4 = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const easing = cubicBezier(.35,.17,.3,.86)
 
   const handleAnimate = async () => {
     console.log('handleAnimate ')
     setFired(true)
-    // await animate('#intro_image_wrapper_2', {
-    //     // width: 1300,
-    //     // height: 250,
-    //     // left: '50%',
-    //     // top: '50%',
-    //     // transform: 'translateY(-50%)',
-    //     // overflow: 'hidden',
-    //     clipPath: "inset(39% 0 32% 44%)"
-    // },
-    // {
-    //   ease: 'easeInOut',
-    //   duration: 0.5,
-    // })
-    // await animate('#intro_image_wrapper_2', {
-    //     clipPath: "inset(39% 0 32% 44%)",
-     
-    // },
-    // {
-    //   ease: 'easeInOut',
-    //   duration: 1,
-    // })
+ 
     await animate('#intro_image_wrapper_2', {
         clipPath: "inset(40% 0 40% 44%)",
-        transform: 'scale(0.8)',
-        
+        // transform: 'scale(0.8)',
+        translateX: [0, 200 ], // Move right, then diagonally down, and finally up
+        translateY: [0, 0, 100], // Move right, then diagonally down, and finally up
+       
     },
     {
-      ease: 'easeInOut',
+      ease: 'easeIn',
       duration: 1,
     })
-    await animate('#intro_image_wrapper_2', {
-      // clipPath: "inset(40% 10% 40% 44%)",
-      
-  },
-  {
-    ease: 'easeOut',
-    duration: 0.5,
-  })
-    await animate('#intro_image_wrapper_2', {
-        y: -400,
-        clipPath: "inset(40% 10% 40% 44%)",
-        transform: "translateY(-10%)  scale(0.8)" 
+ 
+   
+    // await animate('#intro_image_wrapper_2', {
+    //     y: -400,
+    //     clipPath: "inset(40% 10% 40% 44%)",
+    //     transform: "translateY(-10%)  scale(0.8)" 
 
-    },
-    {
-      ease: 'easeOut',
-      duration: 1,
-    })
+    // },
+    // {
+    //   ease: 'easeOut',
+    //   duration: 1,
+    // })
     // await animate('#image_wrapper', {
     //     y: -200,
     // },
