@@ -1,48 +1,141 @@
-.section-1  {
-    background-color: rgb(0, 238, 255);
-    color: white;
-    height: 400px;
-    width: 100%;
-}
-.section-2  {
-    background-color: rgb(130, 163, 165);
-    color: white;
-    height: 400px;
-    width: 100%;
-}
 
+/* PART 2 */
 
-.container {
-    min-height: 100vh;
-    width: 100%;
-}
-
-.animation-container {
-    width: 100vw;
-    height: 100vh;
-    background-color: antiquewhite;
-    display: flex;
-    align-items: center ;
-    justify-content: flex-end;
-    position: fixed;
-}
-
-
-.image-div {
-   height: 100%;
-    width: 100%;
-    background-color: purple;
-
-}
-
-.test {
+.description {
     height: 800px;
+    background-color: white;
+    padding-bottom: 150px;
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
-    background-color: aqua;
+}
+.description  div {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 50px;
+
 }
 
-.next-section {
-    height: 100vh;
+
+.description p {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: var(--primary_dark);
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 700px;
+
+}
+.ethos {
+    background-color: #EAE6E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+
+.ethos_intro {
+   width: 80%;
+   height: 300px;
+    margin-top: -150px;
+    color: var(--primary_dark);
+
+}
+
+.ethos_intro > div {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.ethos_intro img {
     width: 100%;
-    background-color: blue;
+    height: 100%;
+    object-fit: cover;
+    z-index: 5;
+  
+}
+
+.ethos_intro h3 {
+    position: absolute;
+    bottom: 10px;
+    font-size: 4rem;
+    left: 110%;
+    
+}
+
+.ethos_mid {
+    position: relative;
+    height: 350px;
+    width: 100%;
+
+}
+.ethos_mid p {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    max-width: 300px;
+    font-size: 1.2rem;
+    color: var(--primary_dark);
+}
+
+
+
+.ethos_outro {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    width: 80%;
+    color: var(--primary_dark);
+
+ 
+}
+
+.ethos_outro div:nth-child(1) {
+    height: 700px;
+    width: 90%;
+    background-image: url('../../../public/sea.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: -150px;
+}
+.ethos_outro div:nth-child(2) {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.ethos_outro div:nth-child(2)  p {
+    font-size: 1.2rem;
+    color: var(--primary_dark);
+    line-height: 1.5;
+    max-width: 400px;
+    margin-left: 30px;
+    margin-top: 100px;
+   
+}
+.whitespace {
+    height: 500px;
+    width: 100%;
+    background-color: white;
+}
+
+@media screen and (max-width: 1246px) {
+    .description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .description div {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -10,14 +10,19 @@
   padding: 0;
 }
 
-body {
+
+:root {
+  --primary: #EAE6E0;
+  --primary_dark: #6E6259;
+}
+/* body {
   scrollbar-width: 0px; 
 }
 
 ::-webkit-scrollbar {
   display: none;
 
-}
+} */
 
 
 
@@ -140,7 +145,6 @@ body {
   display: grid;
   height: 100%;
   background-color: aliceblue;
-  color: red;
 }
 
 #intro_content_bottom::-webkit-scrollbar {
