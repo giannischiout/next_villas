@@ -12,17 +12,17 @@
 
 
 :root {
-  --primary: #EAE6E0;
+  --primary: #9b917e;
   --primary_dark: #6E6259;
 }
-/* body {
+body {
   scrollbar-width: 0px; 
 }
 
 ::-webkit-scrollbar {
   display: none;
 
-} */
+}
 
 
 

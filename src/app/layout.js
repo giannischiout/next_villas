@@ -1,12 +1,14 @@
 import { Inter } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
+import { Rosarivo } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+const rosa = Rosarivo({ subsets: ['latin'],   weight: ['400']})
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
-  display:'swap',
+  display: 'swap',
   fallback: ['Arial', 'sans-serif'],
 });
 export const metadata = {
@@ -17,7 +19,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      {/* <link href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap" rel="stylesheet" /> */}
+      <body className={rosa.className}>{children}</body>
     </html>
   )
 }
