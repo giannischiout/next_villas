@@ -1,9 +1,6 @@
 'use client';
 import { LuMoveDown, LuScale } from "react-icons/lu";
-import { GrFacebookOption } from "react-icons/gr";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaEnvelope } from "react-icons/fa";
-import { RxHamburgerMenu } from "react-icons/rx";
+import Navbar from "./Navbar";
 import Lenis from '@studio-freight/lenis'
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -105,9 +102,7 @@ const Intro = () => {
             <div className="">
                 <div className=" flex h-[60vh] flex-col items-center justify-center ">
                     <div className="h-[50%]  flex flex-col items-center justify-end">
-                      
                         <div className="relative flex ">
-                            {/* <span className="intro-text z-50">IONIAN DREAM</span> */}
                             <IntroText2 />
                         </div>
                         <span className="opacity-0 intro-para">WE ART THE WORLD POWERED BY TRADITIONS, NATURE AND INNOVATIONS. WE ART THE WORLD POWERED BY TRADITIONS, NATURE AND INNOVATION</span>
@@ -125,6 +120,7 @@ const Intro = () => {
                         Scroll up
                     </span>
                 </div> */}
+                
             </div>
         </>
     );
@@ -155,8 +151,8 @@ const IntroVideo = () => {
     const scale = useTransform(scrollYProgress, [0, 1], [0.6, 0.9]); 
 
     return (
-        <div ref={targetRef} className="h-[200vh]  ">
-            <div ref={scope} className="sticky top-4 h-screen flex align-center justify-center overflow-hidden img-main ">
+        <div ref={targetRef} className="h-[200vh] overflow-hidden  ">
+            <div  className="sticky top-4 h-screen flex align-center justify-center overflow-hidden img-main ">
                 <motion.div
                     id="video"
                     style={{
@@ -177,34 +173,7 @@ const IntroVideo = () => {
 }
 
 
-const Navbar = () => {
-    return (
-        <div className="flex align-center w-full p-6 justify-between fixed z-50">
-            <div className="flex align-center justify-center">
-                <div className="burger ">
-                    <div className="burger-line"></div>
-                    <div className="burger-line"></div>
-                    <div className="burger-line"></div>
-                </div>
-                <div className="ml-4 flex align-center">
-                    <p>Ionian Dream Villas</p>
-                </div>
 
-            </div>
-            <div className="grid gap-3 grid-cols-3 ">
-                <div className="nav-icon ">
-                    <GrFacebookOption />
-                </div>
-                <div className="nav-icon">
-                    <AiFillInstagram />
-                </div>
-                <div className="nav-icon ">
-                    <FaEnvelope />
-                </div>
-            </div>
-        </div>
-    )
-}
 
 
 

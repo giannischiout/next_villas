@@ -1,11 +1,13 @@
 
 
 import Intro from "./_components/Intro";
+import Intro2 from "./_components/Intro2";
 const Home =  () => {
   return (
-    <div>
-      <Intro />
-    </div>
+    <>
+      {/* <Intro /> */}
+      <Intro2 />
+    </>
   )
 }
 

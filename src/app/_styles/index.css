@@ -227,3 +227,157 @@
     font-size: calc(2rem + 3vw);
     opacity: 0;
 }
+
+
+
+
+.test-card_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    border: 1px solid black;
+   
+    
+    
+    
+    
+}
+/* Define wrapper styles */
+.wrapper__2 {
+    min-height: 100vh;
+}
+
+.sticky-div {
+    /* background-color: rgb(250, 236, 217); */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+
+}
+
+.sticky-inner {
+    background-color: blueviolet;
+    height: 400px;
+    width: 50%;
+
+}
+
+
+.random-1 {
+    height: 60vh;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.intro_content {
+    background-color: brown;
+    
+}
+
+.part_two {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 100;
+}
+
+/* ROUND DIV */
+.part_three {
+    /* height: 150vh; */
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.round_container {
+    position: relative;
+}
+.inner_round {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color:#FAECD9;
+    /* top: -130px; */
+    /* z-index: 300; */
+}
+
+.scroller {
+    /* animation: scroll 5s linear infinite; */
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.scroller {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.scroller_inner {
+    animation: scroll 10s linear infinite ;
+    height: 100%;
+    width: 9000px;
+    background-color: rosybrown;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(10, 900px);
+}
+.scroller_gallery {
+    /* min-width: 500px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.scroller_gallery img {
+    object-fit: cover;
+    min-width: 500px;
+    height: 100%;
+}
+@keyframes scroll {
+    to {
+        transform: translate(calc(-20% - 0.5rem));
+      }
+}
+
+
+.part_four {
+    /* background-color: #4B6F44; */
+    height: 30vh;
+    width: 100%;
+}

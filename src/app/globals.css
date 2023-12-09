@@ -13,33 +13,33 @@
 
 :root {
   --primary: #9b917e;
+  --secondary: #f4d5ac;
   --primary_dark: #6E6259;
 }
-body {
+/* body {
   scrollbar-width: 0px; 
 }
 
 ::-webkit-scrollbar {
   display: none;
 
-}
+} */
 
 
 
-.container_2 {
+/* .container_2 {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-}
+} */
 
 
 
 
 
-#intro_wrapper_2 {
+/* #intro_wrapper_2 {
   width: 100%;
   height: 100%;
-  /* overflow-y: auto; */
   position: fixed;
   background-color: white;
   scrollbar-width: 0px; 
@@ -155,7 +155,6 @@ body {
 
 #image_bottom {
   background-image: url('../../public/horizontal.jpg');
-  /* display: none; */
   width: 100%;
   height: 250px;
   background-size: cover;
@@ -168,6 +167,7 @@ body {
   justify-content: center;
   height: 250px;
   overflow-y: hidden;
+
 
 }
 @media (max-width: 768px) {
@@ -183,4 +183,4 @@ body {
   align-items: center;
   z-index: 9999;
 }
-
+ */
