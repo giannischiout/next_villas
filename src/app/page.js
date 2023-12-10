@@ -1,12 +1,12 @@
 
 
-import Intro from "./_components/Intro";
 import Intro2 from "./_components/Intro2";
+import HomePage from "./_components/Home";
+import Test from "./_components/Test";
 const Home =  () => {
   return (
     <>
-      {/* <Intro /> */}
-      <Intro2 />
+      <HomePage />
     </>
   )
 }

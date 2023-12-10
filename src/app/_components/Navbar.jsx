@@ -3,34 +3,40 @@ import { GrFacebookOption } from "react-icons/gr";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaEnvelope } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-
-
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import Burger from "./Burger";
 const Navbar = () => {
-    return (
-        <div className="flex align-center w-full p-6 justify-between fixed z-50">
-            <div className="flex align-center justify-center">
-                <div className="burger ">
-                    <div className="burger-line"></div>
-                    <div className="burger-line"></div>
-                    <div className="burger-line"></div>
-                </div>
-                <div className="ml-4 flex align-center">
-                    <p>Ionian Dream Villas</p>
-                </div>
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
 
-            </div>
-            <div className="grid gap-3 grid-cols-3 ">
-                <div className="nav-icon ">
-                    <GrFacebookOption />
+    })
+
+    const color = useTransform(scrollYProgress, [0, 0.2], ['white', 'black']);
+
+
+    return (
+        <div ref={targetRef}>
+            <div 
+                className="navbar">
+                <div className="navbar_left">
+                    <Burger />
                 </div>
-                <div className="nav-icon">
-                    <AiFillInstagram />
-                </div>
-                <div className="nav-icon ">
-                    <FaEnvelope />
+                <div className="grid gap-3 grid-cols-3 ">
+                    <div className="nav-icon ">
+                        <GrFacebookOption />
+                    </div>
+                    <div className="nav-icon">
+                        <AiFillInstagram />
+                    </div>
+                    <div className="nav-icon ">
+                        <FaEnvelope />
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
 

@@ -1,0 +1,14 @@
+.burger {
+    background-color: #ece5d4; 
+    width: 60px;
+    height: 60px;
+    color: #c89617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.burger svg {
+    font-size: 30px;
+}

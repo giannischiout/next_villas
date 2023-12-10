@@ -1,109 +1,79 @@
 
 'use client'
 import { motion, inView, useAnimate, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect } from "react";
-import Image from "next/image";
+import { useRef, useEffect, useState } from "react";
 import Navbar from "./Navbar";
-const Intro2 = () => {
+import Lenis from '@studio-freight/lenis'
+import Image from "next/image";
+import { IntroText } from "./Intro";
+const Hero = () => {
+    const [image, setImage] = useState('background.webp')
+    const targetRef = useRef(null);
+    const [position, setPosition] = useState('sticky')
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
+
+    useEffect(() => {
+        const lenis = new Lenis()
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
+    const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+    useEffect(() => {
+        scrollYProgress.on((e) => {
+            if (e > 0.9) {
+                setPosition('fixed')
+            } else {
+                setPosition('sticky')
+               
+            }
+        
+        })
+    }, [scrollYProgress])
+
     return (
         <div className="wrapper__2">
             <Navbar />
-            <div className="random-1">
-                <div className="intro_content">
-                    <h1>THIS IS THE HEADER</h1>
-                    <h2>THIS IS THE HEADER</h2>
+                <IntroText />
+            <div ref={targetRef} className="sticky_container">
+                <div className="sticky_inner" style={{position: position}} >
+                    <motion.div
+                        className="sticky_content"
+                        style={{
+                            scale: scale,
+                          
+                        }}
+                    >
+                        {/* <video className="w-full h-full object-cover object-bottom" autoPlay loop muted>
+                            <source src="/sea.mp4" type="video/mp4" />
+                        </video> */}
+                       <div className="sticky_image">
+                            <Image
+                                src={`/${image}`}
+                                fill={true}
+                                quality={100}
+                            />
+                       </div>
+                    </motion.div>
                 </div>
-            </div>
-            <div className="sticky-div">
-                <div className="sticky-inner">
-                    bbbbbbbbbbbbbbbbb
-                </div>
-            </div>
 
-            <div className="part_two h-[100vh]"></div>
-                
-            <ImagesGallery />
-                <div>
-                    sefseseseseffse
-                </div>
-            <div className="part_four"></div>
+            </div>
+            {/* < PartTwo /> */}
+            {/* <ImagesGallery /> */}
+            
         </div>
     );
 }
 
 
 
-// const RoundPart = ({children, style, bgColor}) => {
-//     const roundDiv = useRef(null)
-//     const [scope, animate] = useAnimate()
-//     const {scrollYProgress} = useScroll({
-//         target:  roundDiv,
-//     })
-
-//     useEffect(() => {
-//         inView("#inner_round_div", (e) => {
-            
-//            let animation = animate('#inner_round_div', {
-//                 borderTopLeftRadius: ['50%', '0'],
-//                 borderTopRightRadius: ['50%',  '0'],
-//                 width: '100%',
-//                 height: '100%',
-//                 top: [-130, 0],
-//             }, {
-//                 ease: 'easeInOut',
-//                 duration: 0.5,
-//             })
-//             return (leaveInfo) => animation.stop()
-
-//           })
-
-//     }, [scrollYProgress])
-
-//     return (
-//         <div ref={scope} className={`${style} round_container` } style={{backgroundColor: bgColor}}>
-//             <motion.div ref={roundDiv} id="inner_round_div" className={`inner_round`} style={{backgroundColor: bgColor}}>
-//                 {children}
-//             </motion.div>
-//         </div>
-//     )
-// }
 
 
-
-
-
-const ImagesGallery = () => {
-   
-
-    const images = [
-        {scr: '1.webp'},
-        {scr: '2.webp'},
-        {scr: '3.webp'},
-        {scr: '4.webp'},
-        {scr: '5.webp'},
-        {scr: '6.webp'},
-        {scr: '7.webp'},
-        {scr: '8.webp'},
-        {scr: '9.webp'},
-        {scr: '10.webp'},
-       
-
-        
-        
-    ]
-    return (
-        <div  className="scroller">
-            <motion.div  className="scroller_inner">
-            {images.map((image, index) => {
-                return (
-                    <div key={index} className="scroller_gallery">
-                        <img src={`${image.scr}`} alt="" />
-                    </div>
-                )
-            })}
-            </motion.div>
-          
-        </div>
-    )
-}
-export default Intro2;
+export default Hero;

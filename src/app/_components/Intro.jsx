@@ -4,13 +4,13 @@ import Navbar from "./Navbar";
 import Lenis from '@studio-freight/lenis'
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, useAnimate, useAnimation ,  stagger} from "framer-motion";
+import { motion, useScroll, useTransform, useAnimate, useAnimation, stagger } from "framer-motion";
 
 
 
 
 
-const IntroText2 = () => {
+export const IntroText = () => {
     const [scope, animate] = useAnimate();
     const [value, setValue] = useState('#e8e6de');
 
@@ -19,25 +19,24 @@ const IntroText2 = () => {
     const staggerMenuItems = stagger(0.1);
     const staggerSubtitle = stagger(0.02);
 
-   
-    const letterElements = word.split('').map((letter, index) => (
-        <span  key={index} className="new_intro_text z-50">
-          {letter}
-        </span>
-      ));
 
-      const split_subtitle = subtitle.split('').map((letter, index) => {
+    const letterElements = word.split('').map((letter, index) => (
+        <span key={index} className="new_intro_text z-50">
+            {letter}
+        </span>
+    ));
+
+    const split_subtitle = subtitle.split('').map((letter, index) => {
         return (
-            <span key={index} className="opacity-0 live text-8xl z-50">
+            <span key={index} className="opacity-0 live text-xl z-50">
                 {letter}
             </span>
         )
-      })
+    })
 
 
-      useEffect(() => {
+    useEffect(() => {
         const lenis = new Lenis()
-
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
@@ -52,7 +51,7 @@ const IntroText2 = () => {
 
 
     const handleAnimate = async () => {
-       
+
         await animate('span', {
             opacity: [0, 1],
         })
@@ -65,17 +64,17 @@ const IntroText2 = () => {
         })
     }
     return (
-       <>   
-
-         <div className="text-center" ref={scope} style={{color: value}}>
-         <span className="opacity-0 intro-subtitle">Villas Leukada</span>
-         {/* <p id="live" className="text-8xl">LIVE THE</p> */}
-         {split_subtitle}
-         <div className="h-1 w-50" >
-         </div>
-            {letterElements}
+        <div className="text_container">
+            <div className="text-center flex flex-col leading-none mb-40" ref={scope} style={{ color: value }}>
+                <span className="intro-subtitle">Villas Leukada</span>
+                <div className="title">{letterElements}</div>
+            </div>
+            <div className="scroll_down">
+                <p>Scroll Down</p>
+                <LuMoveDown />
+            </div>
         </div>
-       </>
+
     )
 }
 
@@ -114,13 +113,13 @@ const Intro = () => {
                         <LuMoveDown />
                     </div>
                 </div>
-                    <IntroVideo />
+                <IntroVideo />
                 {/* <div className="flex h-48 items-center justify-center">
                     <span className="font-semibold uppercase text-neutral-500">
                         Scroll up
                     </span>
                 </div> */}
-                
+
             </div>
         </>
     );
@@ -128,37 +127,27 @@ const Intro = () => {
 
 
 
-const IntroVideo = () => {
+export const IntroVideo = () => {
     const [scope, animate] = useAnimate();
 
-    const targetRef = useRef(null);
-    useEffect(() => {
-        const lenis = new Lenis()
 
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-    }, [])
 
     const { scrollYProgress } = useScroll({
         target: targetRef,
     });
 
 
-    const scale = useTransform(scrollYProgress, [0, 1], [0.6, 0.9]); 
+    const scale = useTransform(scrollYProgress, [0, 1], [0.6, 0.9]);
 
     return (
-        <div ref={targetRef} className="h-[200vh] overflow-hidden  ">
-            <div  className="sticky top-4 h-screen flex align-center justify-center overflow-hidden img-main ">
+        <div ref={targetRef} className="h-[200vh] overflow-hidden">
+            <div className="sticky top-0 h-screen flex align-center justify-center overflow-hidden img-main ">
                 <motion.div
                     id="video"
                     style={{
                         scale: scale,
                     }}
-                    
+
                     className="w-full h-full "
                 >
                     <video className="w-full h-full object-cover object-bottom" autoPlay loop muted>
@@ -166,8 +155,8 @@ const IntroVideo = () => {
                     </video>
                 </motion.div>
             </div>
-            
-            
+
+
         </div>
     )
 }
