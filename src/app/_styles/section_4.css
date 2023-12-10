@@ -5,17 +5,92 @@
     flex-direction: column;
     align-items: center;
 }
-
-
-.four_presticky {
-    background-color: var(--primary_dark);
-    height: 300px;
+.four_grid_container {
+    height: 60vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.four_presticky > div {
+
+.four_intro_grid {
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 40% 60%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.four_intro_grid div:nth-child(1) {
+    background-color: aqua;
+}
+
+/* SMALL IMAGE ON THE TOP LEFT */
+.four_intro_grid div:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.four_intro_grid div:nth-child(2) .four_small_image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: translateY(-150px);
+}
+
+
+.four_intro_grid div:nth-child(3)  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;   
+    background-color: red; 
+}
+.four_large_image {
+    position: relative;
+    /* width: 40%; */
+    height: 300px;
+    height: 400px;
+
+}
+
+/* FOURTH ELEMENT THE PARAGRAM TEXT ON THE BOTTOM RIGHT */
+.four_intro_grid div:nth-child(4) {
+  
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.four_intro_grid div:nth-child(4) p {
+    color: var(--primary);
+}
+.four_intro_grid div:nth-child(4) h5 {
+    font-size: calc(1rem + 1vw);
+    color: var(--primary_dark);
+}
+
+
+
+
+.four_intro_grid div {
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.four_presticky {
+    background-color: var(--primary_dark);
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .four_presticky > div {
     width: 90%;
     height: 100%;
     display: grid;
@@ -30,6 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: red;
 }
 .presticky_first div {
     display: flex;
@@ -37,7 +113,7 @@
     align-items: flex-end;
     justify-content: center;
     padding-right: 20px;
-}
+} */
 .gallery_text {
     font-size: calc(2rem + 4vw);
 }

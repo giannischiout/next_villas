@@ -2,14 +2,15 @@
 import Image from "next/image"
 import LetterReveal from "./LetterReveal"
 import { BsArrowRight } from "react-icons/bs";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useAnimation, motion, useAnimate, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const SectionThee = () => {
   return (
     <div className="three_container">
       <div className="flex  h-[10vh] items-center justify-center">
-        
+
       </div>
       <HorizontalScrollCarousel />
       <div className="flex h-48 items-center justify-center">
@@ -28,22 +29,23 @@ const HorizontalScrollCarousel = () => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"], {
-  
-  
+
+
   });
 
   return (
- 
-     <section ref={targetRef} className="relative h-[300vh]  flex align-center justify-center villas_wrapper">
-     <div className="sticky top-0 flex h-screen items-center overflow-hidden   ">
-       <motion.div style={{ x }} className="flex gap-4 motion_villas">
+
+    <section ref={targetRef} className="relative h-[300vh]  flex align-center justify-center villas_wrapper">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden   ">
+        <motion.div style={{ x }} className="flex gap-4 motion_villas">
           <IntroBox />
           <VillaBox image={"10.webp"} />
-          <VillaBox image={"3.webp"}/>
-          <VillaBox  image={"4.webp"}/>
-       </motion.div>
-     </div>
-   </section>
+          <VillaBox image={"3.webp"} />
+          <VillaBox image={"4.webp"} />
+        </motion.div>
+      </div>
+     
+    </section>
   );
 };
 
@@ -52,36 +54,107 @@ const HorizontalScrollCarousel = () => {
 
 
 
-const VillaBox  = ({image}) => {
-    return (
-   <div className="villa_box_container">
-            <Image 
-                src={`/${image}`}
-                fill={true}
-            />
+const VillaBox = ({ image }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [ref, inView] = useInView();
+  const [scope, animate] = useAnimate()
+
+  const handleHover = () => {
+    setIsHovered(true);
+  
+  }
+
+  // useEffect(() => {
+  //     console.log('ishovered')
+  //     console.log(isHovered)
+  //     if(isHovered) {
+  //       animate('.villa_box_container', {
+  //         scale: [1, 1.4],
+  //       }, {
+  //         ease: 'easeInOut',
+  //         duration: 0.8,
+      
+  //       })
+  //     }
+  // }, [isHovered])
+
+  useEffect(() => {
+    if (inView) {
+    
+      animate('.image_curtain', {
+        width: ['100%', '0%'],
+      }, {
+        ease: 'easeInOut',
+        duration: 0.8,
+
+      })
+    }
+
+
+  }, [inView]);
+
+  const handleClick = () => {
+    console.log('clicked')
+  }
+  return (
+    <div onClick={handleClick} ref={scope} className="relative ">
+      <div className="image_curtain"></div>
+      <div 
+  
+        ref={ref} className="villa_box_container z-50"
+      >
+        <Image
+        onClick={handleClick}
+          src={`/${image}`}
+          fill={true}
+        />
+        <div className="villa_box_title ">
+          <p  onClick={handleClick}>
+          &#8226;JIRA &#8226;  
+            JIRA   
+          </p>
         </div>
-     
-    )
+      </div>
+    </div>
+
+  )
 }
 
 
 const IntroBox = () => {
-    return (
-      <div className="intro_box">
-        <div>
+  return (
+    <div className="intro_box">
+
+      <div>
+        {/* <p className="intro_box_names">
+          JIRA &#8226; &#x2022; &bull; MIRA &#8226; &#x2022; &bull; TIRA 
+        </p> */}
         <p className="intro_box_header">Take a moment to explore our Villas</p>
-      <p className="">We ensure everything about your stay is immaculate, from the pillowy white Etro cotton sheets dressing your bed to the throughouly placed garden-grown herb garnishes on your plate.</p>
+        <p className="">We ensure everything about your stay is immaculate, from the pillowy white Etro cotton
+          sheets dressing your bed to the throughouly placed garden-grown herb garnishes on your plate.
+        </p>
+        <div className="intro_box_pointer">
+          <p>EXPLORE</p>
+          <BsArrowRight className="arrow_right" />
+
         </div>
-   
       </div>
-    )
+
+    </div>
+  )
 }
 
-
-const Button = () => {
+const LastAnimation = () => {
   return (
-    <div>
-
+    <div  className="h-[500vh] bg-red-400 ">
+        <div className="sticky top-0">
+          <div className="absolute">
+            <Image
+              src="/3.webp"
+              fill={true}
+            />
+          </div>
+        </div>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const HomePage = () => {
             {/* <Hero /> */}
             <SectionSecond />
             <SectionThee  />
-            {/* <SectionFour  /> */}
+            <SectionFour  />
             {/* <ImagesGallery /> */}
         </div>
     )
