@@ -3,10 +3,18 @@
         z-index: -1;
     }
 
-
+    .three_sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
 
     .three_inner {
-    width: 80%;
+        width: 80%;
         height: 500px;
     }
 
@@ -36,7 +44,9 @@
         align-items: center;
         background-color: antiquewhite  ;
     }
-
+.three_container {
+    z-index: -10;
+}
 
     .villa_box_wrapper {
         display: flex;
@@ -86,7 +96,7 @@
 
     .motion_villas {
         display: flex;
-        padding-left: 200px;
+        padding-left:5%;
     
     }
 
@@ -119,7 +129,6 @@
     }
     .intro_box > div {
         max-width: 550px;
-        font-size: 2rem;
         border-left: 2px solid  rgb(210, 202, 191);
         padding-left: 20px;
         position: relative;
@@ -129,8 +138,13 @@
     }
     .intro_box_header {
         font-weight: 500;
+        font-size: calc(1rem + 0.3vw);
         color: var(--primary_dark)
     }   
+
+    .intro_box_para {
+        font-size: calc(1rem + 0.3vw);
+    }
 
     .expolore-btn {
         width: 200px;
@@ -171,4 +185,25 @@
         font-size: 30px;
         color: rgb(210, 202, 191)
 
+    }
+
+
+    @media screen and (max-width: 1177px) {
+        .motion_villas {
+            padding-left: 3%;
+        }
+    }
+    @media screen and (max-width: 842px) {
+        .horizontal_scroll_inner {
+            height: 40vh;
+        }
+
+        .villa_box_container {
+            height: 400px;
+            width: 500px;
+            margin-right: 50px;
+        }
+        .three_sticky {
+            /* height: 50vh; */
+        }
     }

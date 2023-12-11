@@ -8,10 +8,10 @@ import { useInView } from "react-intersection-observer";
 
 const SectionThee = () => {
   return (
-    <div className="three_container">
-      <div className="flex  h-[10vh] items-center justify-center">
+    <div className="three_container ">
+      {/* <div className="flex h-[10vh] items-center justify-center">
 
-      </div>
+      </div> */}
       <HorizontalScrollCarousel />
       <div className="flex h-48 items-center justify-center">
         <span className="font-semibold uppercase text-neutral-500">
@@ -35,8 +35,8 @@ const HorizontalScrollCarousel = () => {
 
   return (
 
-    <section ref={targetRef} className="relative h-[300vh]  flex align-center justify-center villas_wrapper">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden   ">
+    <section ref={targetRef} className="relative h-[300vh]  flex align-center justify-center villas_wrapper z-50">
+      <div className="three_sticky">
         <motion.div style={{ x }} className="flex gap-4 motion_villas">
           <IntroBox />
           <VillaBox image={"10.webp"} />
@@ -88,7 +88,7 @@ const VillaBox = ({ image }) => {
       <div className="image_curtain"></div>
       <div 
   
-        ref={ref} className="villa_box_container z-50"
+        ref={ref} className="villa_box_container"
       >
         <Image
         onClick={handleClick}
@@ -115,7 +115,7 @@ const IntroBox = () => {
       <div>
         
         <p className="intro_box_header">Take a moment to explore our Villas</p>
-        <p className="">We ensure everything about your stay is immaculate, from the pillowy white Etro cotton
+        <p className="intro_box_para">We ensure everything about your stay is immaculate, from the pillowy white Etro cotton
           sheets dressing your bed to the throughouly placed garden-grown herb garnishes on your plate.
         </p>
         <div className="intro_box_pointer">

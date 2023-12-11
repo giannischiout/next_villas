@@ -488,6 +488,11 @@
 }
 
 @media screen and (max-width: 1246px) {
+    .ethos_intro {
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+    }
     .description {
         display: flex;
         align-items: center;
@@ -529,7 +534,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 500px;
+            height: 300px;
             width: 100%;
             position: relative;
             margin-bottom: 0;
@@ -557,4 +562,10 @@
            position: static;
         }
         
+}
+
+@media  screen and (max-width: 1017px) {
+    
+    .ethos_intro {
+    }
 }
