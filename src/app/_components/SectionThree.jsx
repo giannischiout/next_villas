@@ -24,20 +24,24 @@ const SectionThee = () => {
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
+  const [index, setIndex] = useState(0);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"], {
-
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"], {
 
   });
 
+  useEffect(() => {
+    console.log('x')
+      console.log(x.get)
+  }, [x])
   return (
 
     <section ref={targetRef} className="relative h-[300vh]  flex align-center justify-center villas_wrapper z-50">
       <div className="three_sticky">
-        <motion.div style={{ x }} className="flex gap-4 motion_villas">
+        <motion.div style={{ x }} className="flex motion_villas">
           <IntroBox />
           <VillaBox image={"10.webp"} />
           <VillaBox image={"3.webp"} />
@@ -52,8 +56,7 @@ const HorizontalScrollCarousel = () => {
 
 
 
-
-
+const VillasPresentaion = () => {}
 const VillaBox = ({ image }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [ref, inView] = useInView();
@@ -68,10 +71,10 @@ const VillaBox = ({ image }) => {
   useEffect(() => {
     if (inView) {
     
-      animate('.image_curtain', {
+      animate('.villas_curtain', {
         width: ['100%', '0%'],
       }, {
-        ease: 'easeInOut',
+        ease: 'anticipate',
         duration: 0.8,
 
       })
@@ -85,7 +88,7 @@ const VillaBox = ({ image }) => {
   }
   return (
     <div onClick={handleClick} ref={scope} className="relative ">
-      <div className="image_curtain"></div>
+      <div className="villas_curtain"></div>
       <div 
   
         ref={ref} className="villa_box_container"

@@ -10,6 +10,16 @@
     left: 0;
 }
 
+.villas_curtain {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary_dark);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-image: url('../../../public/curtain.png');
+}
 
 /* PART 2 */
 
@@ -60,7 +70,8 @@
 .ethos_intro {
     width: 80%;
     height: 300px;
-    margin-top: -150px;
+    /* margin-top: -150px; */
+    transform: translateY(-150px);
     color: var(--primary_dark);
     display: flex;
 }
@@ -74,7 +85,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    font-size: calc(2rem + 3vw);
+    font-size: calc(2rem + 2vw);
     margin-left: 20px;
     margin-top: 50px;
 }
@@ -562,10 +573,4 @@
            position: static;
         }
         
-}
-
-@media  screen and (max-width: 1017px) {
-    
-    .ethos_intro {
-    }
 }

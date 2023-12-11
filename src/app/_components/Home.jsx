@@ -1,11 +1,11 @@
 'use client'
 import Hero from "./Intro2";
 import React, { useEffect } from "react";
-import SectionSecond from "./SectionSecond";
 import Lenis from "@studio-freight/lenis";
-import SectionThee from "./SectionThree";
-import ImagesGallery from "./ImageGallery";
-import SectionFour from "./SectionFour";
+import VillaOne from "./VillaSection1";
+import { VillaTwo } from "./VillaSection1";
+import SectionSecond from "./SectionSecond";
+import SectionFirst from "./SectionOne";
 const HomePage = () => {
     useEffect(() => {
         const lenis = new Lenis()
@@ -20,13 +20,31 @@ const HomePage = () => {
     return (
         <div>
             {/* <Hero /> */}
-            <SectionSecond />
-            <SectionThee  />
-            <SectionFour  />
+            <SectionFirst />
+            <VillaOne />
+        <VillaTwo />
+     
+
+            <VillaOne />        
+            {/* <SectionSecond /> */}
+            {/* <div className="h-[100vh] w-[100%]">
+
+            </div> */}
+            {/* <SectionThee  />
+            <SectionFour  /> */}
             {/* <ImagesGallery /> */}
         </div>
     )
 }
+
+
+
+
+
+
+
+
+
 
 
 export default HomePage;

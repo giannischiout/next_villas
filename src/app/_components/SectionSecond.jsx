@@ -4,32 +4,6 @@ import { useAnimation, motion, useAnimate, useScroll, useTransform } from "frame
 import { useInView } from "react-intersection-observer";
 import LetterReveal from "./LetterReveal";
 
-const Wrapper = () => {
-    return (
-        <div>
-            <SectionFirst />
-            <SectionSecond />
-          
-        </div>
-    )
-}
-
-const SectionFirst = () => {
-   
-    return (
-        <section className="description">
-        <div>
-            <span>Tastemakers of Understated Chic Luxury</span>
-            <p>Sitting atop the curvaceous cliffs of Italy’s Amalfi Coast,
-                Casa Angelina offers a sublime slice of modern minimalism on the Mediterranean, with an emphasis on barefoot luxury and top-level gastronomy.</p>
-            <p>Sitting atop the curvaceous cliffs of Italy’s Amalfi Coast, Casa Angelina offers a sublime slice of modern minimalism on the Mediterranean, with an emphasis on barefoot luxury and top-level gastronomy.</p>
-            <p>We work to ensure everything about your stay is true perfection, from our welcome amenities and the thoughtful turndown services to the curated dishes from our chefs and activities organized by our concierge.</p>
-
-        </div>
-    </section>
-    )
-}
-
 
 
 const SectionSecond = () => {
@@ -74,7 +48,7 @@ const SectionSecond = () => {
                                 fill={true}
                             />
                         </div>
-                        <LetterReveal word="Ethos" style="ethos_intro_text" />
+                    <LetterReveal word="Ethos" style="  " />
                 </div>
                 <div className="ethos_mid">
                     <p>Understand chick is our design ethos and subtle details are our mantra</p>
@@ -102,4 +76,4 @@ const SectionSecond = () => {
     )
 }
 
-export default Wrapper;
+export default SectionSecond;

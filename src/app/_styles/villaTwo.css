@@ -1,0 +1,27 @@
+.villa_two_container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../public/4.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.villa_two_container {
+    font-size: 10rem;
+    color: white;
+    width: 100%;
+}
+
+.villa_two_container div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
