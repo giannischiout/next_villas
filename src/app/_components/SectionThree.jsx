@@ -64,20 +64,7 @@ const VillaBox = ({ image }) => {
   
   }
 
-  // useEffect(() => {
-  //     console.log('ishovered')
-  //     console.log(isHovered)
-  //     if(isHovered) {
-  //       animate('.villa_box_container', {
-  //         scale: [1, 1.4],
-  //       }, {
-  //         ease: 'easeInOut',
-  //         duration: 0.8,
-      
-  //       })
-  //     }
-  // }, [isHovered])
-
+  
   useEffect(() => {
     if (inView) {
     
@@ -110,7 +97,7 @@ const VillaBox = ({ image }) => {
         />
         <div className="villa_box_title ">
           <p  onClick={handleClick}>
-          &#8226;JIRA &#8226;  
+      
             JIRA   
           </p>
         </div>
@@ -126,9 +113,7 @@ const IntroBox = () => {
     <div className="intro_box">
 
       <div>
-        {/* <p className="intro_box_names">
-          JIRA &#8226; &#x2022; &bull; MIRA &#8226; &#x2022; &bull; TIRA 
-        </p> */}
+        
         <p className="intro_box_header">Take a moment to explore our Villas</p>
         <p className="">We ensure everything about your stay is immaculate, from the pillowy white Etro cotton
           sheets dressing your bed to the throughouly placed garden-grown herb garnishes on your plate.

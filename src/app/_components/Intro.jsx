@@ -102,7 +102,6 @@ const Intro = () => {
                 <div className=" flex h-[60vh] flex-col items-center justify-center ">
                     <div className="h-[50%]  flex flex-col items-center justify-end">
                         <div className="relative flex ">
-                            <IntroText2 />
                         </div>
                         <span className="opacity-0 intro-para">WE ART THE WORLD POWERED BY TRADITIONS, NATURE AND INNOVATIONS. WE ART THE WORLD POWERED BY TRADITIONS, NATURE AND INNOVATION</span>
                     </div>
