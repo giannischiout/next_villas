@@ -5,7 +5,7 @@ const SectionFour = () => {
     return (
         <div className="four_container">
             <div className="four_grid_container">
-                <div className=" four_intro_grid">
+                <div className="four_intro_grid">
                        {/* GRID 1 */}
                     <div>
                     </div>
@@ -27,7 +27,7 @@ const SectionFour = () => {
                         <p>a collection of exquisite villas nestled in the enchanting
                             landscape of Lefkada. Offering a harmonious blend of modern luxury and serene natural beauty,
                             these villas epitomize elegance and comfort. Each villa boasts breathtaking views of the azure Ionian Sea,
-                            inviting you to unwind in a private haven of tranquility. Immerse yourself in the island's rich
+                            inviting you to unwind in a private haven of tranquility. Immerse yourself in the island`&apos;`s rich
                             culture and explore nearby beaches with crystal-clear waters. Indulge in the ultimate getaway experience,
                             where every moment is a celebration of relaxation and sophistication</p>
                     </div>
