@@ -5,6 +5,8 @@ import Lenis from "@studio-freight/lenis";
 import VillaOne from "./VillaSection1";
 import { VillaTwo } from "./VillaSection1";
 import SectionSecond from "./SectionSecond";
+import SectionThee from "./SectionThree";
+import SectionFour from "./SectionFour";
 import SectionFirst from "./SectionOne";
 const HomePage = () => {
     useEffect(() => {
@@ -19,19 +21,19 @@ const HomePage = () => {
     }, [])
     return (
         <div>
-            {/* <Hero /> */}
+            <Hero />
             <SectionFirst />
             <VillaOne />
         <VillaTwo />
      
 
-            <VillaOne />        
+            {/* <VillaOne /> */}
             {/* <SectionSecond /> */}
             {/* <div className="h-[100vh] w-[100%]">
 
             </div> */}
-            {/* <SectionThee  />
-            <SectionFour  /> */}
+            <SectionThee  />
+            <SectionFour  />
             {/* <ImagesGallery /> */}
         </div>
     )

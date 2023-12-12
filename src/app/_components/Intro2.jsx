@@ -7,7 +7,7 @@ import Lenis from '@studio-freight/lenis'
 import Image from "next/image";
 import { IntroText } from "./Intro";
 const Hero = () => {
-    const [image, setImage] = useState('background.webp')
+    const [image, setImage] = useState('4.webp')
     const targetRef = useRef(null);
     const [position, setPosition] = useState('sticky')
     const { scrollYProgress } = useScroll({
