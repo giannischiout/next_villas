@@ -1,5 +1,7 @@
+import { useAnimate} from "framer-motion";
 import Image from "next/image";
-
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const VillaOne = () => {
     return (
@@ -81,9 +83,27 @@ const VillaOne = () => {
 // }
 
 export const VillaTwo = () => {
+    const [scope, animate] = useAnimate()
+    const [ref, inView] = useInView({
+        threshold: 0.3,
+        triggerOnce: true
+    })
+
+    useEffect(() => {
+        if(inView) {
+            animate(scope.current, {
+                opacity: [0, 1],
+               
+            }, {
+                duration: 1,
+                ease: "easeInOut"
+            })
+        }
+      
+    }, [inView])
     return (
-        <div className="villa_two_container">
-           <div>
+        <div ref={ref} className="villa_two_container">
+           <div ref={scope} id={'business_name'}>
            IONIAN VILLAS
            </div>
         </div>
